@@ -9,8 +9,14 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
+gem 'thin'
 
 group :development, :test do
+  gem 'capistrano', '~> 3.3.0'
+  gem 'capistrano-rbenv'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails', github: 'capistrano/rails', branch: 'master'
+  gem 'capistrano-thin', '~> 1.2.0'
   gem 'byebug'
 end
 
