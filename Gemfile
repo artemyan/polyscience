@@ -14,6 +14,7 @@ gem 'devise'
 gem 'activeadmin'
 gem 'cancancan'
 gem 'rolify'
+gem 'faker'
 
 group :development, :test do
   gem 'capistrano', '~> 3.3.0'
@@ -22,7 +23,6 @@ group :development, :test do
   gem 'capistrano-rails', github: 'capistrano/rails', branch: 'master'
   gem 'capistrano-thin', '~> 1.2.0'
   gem 'byebug'
-  gem 'faker'
 end
 
 group :development do
