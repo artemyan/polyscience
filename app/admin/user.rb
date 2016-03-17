@@ -21,8 +21,36 @@ ActiveAdmin.register User do
       f.input :email
       f.input :password
       f.input :password_confirmation
+      f.input :groups, as: :select2_multiple, collection: Group.all
+      f.input :scientists, as: :select2_multiple, collection: Scientist.all
     end
     f.actions
   end
 
+  controller do
+    def create
+      assign_roles
+      super
+    end
+
+    def update
+      assign_roles
+      if params[:user][:password].blank?
+        params[:user].delete("password")
+        params[:user].delete("password_confirmation")
+      end
+      super
+    end
+
+    def assign_roles
+      groups = params[:user][:groups].reject {|g| g.blank? }
+      if groups.present?
+        resource.add_rights(Group, groups)
+      end
+      scientists = params[:user][:scientists].reject {|g| g.blank? }
+      if scientists.present?
+        resource.add_rights(Scientist, scientists)
+      end
+    end
+  end
 end

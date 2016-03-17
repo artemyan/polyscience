@@ -11,7 +11,9 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'thin'
 gem 'devise'
+gem "select2-rails"
 gem 'activeadmin'
+gem 'activeadmin-select2', github: 'mfairburn/activeadmin-select2'
 gem 'cancancan'
 gem 'rolify'
 gem 'faker'
