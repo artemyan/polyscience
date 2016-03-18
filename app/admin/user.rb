@@ -21,8 +21,8 @@ ActiveAdmin.register User do
       f.input :email
       f.input :password
       f.input :password_confirmation
-      f.input :groups, as: :select2_multiple, collection: Group.all
-      f.input :scientists, as: :select2_multiple, collection: Scientist.all
+      f.input :groups, as: :select2_multiple, collection: options_for_select(Group.all.map{|b| [b.title,b.id]}, f.object.groups_ids)
+      f.input :scientists, as: :select2_multiple, collection: options_for_select(Scientist.all.map{|b| [b.name,b.id]}, f.object.scientists_ids)
     end
     f.actions
   end
