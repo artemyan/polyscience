@@ -18,3 +18,5 @@
 /tmp
 .capistrano/metrics
 .byebug_history
+.DS_Store
+public/system/*
