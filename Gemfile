@@ -17,6 +17,8 @@ gem 'activeadmin-select2', github: 'mfairburn/activeadmin-select2'
 gem 'cancancan'
 gem 'rolify'
 gem 'faker'
+gem 'ckeditor'
+gem 'paperclip'
 
 group :development, :test do
   gem 'capistrano', '~> 3.3.0'
