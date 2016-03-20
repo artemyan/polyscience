@@ -7,8 +7,8 @@ class Scientist < ActiveRecord::Base
   has_many :groups, through: :group_scientists
   accepts_nested_attributes_for :groups
 
-  has_attached_file :image, styles: { medium: "240x150>" }
-
+  has_attached_file :cv
+  do_not_validate_attachment_file_type :cv
   has_attached_file :image, :styles => {
     :medium => {:geometry => "220x220#", :processors => [:cropper]}
   }

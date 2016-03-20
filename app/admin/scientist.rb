@@ -1,10 +1,11 @@
 ActiveAdmin.register Scientist do
-  permit_params :name, :text, :image, :crop_x, :crop_y, :crop_w, :crop_h, group_ids: []
+  permit_params :name, :text, :cv, :image, :crop_x, :crop_y, :crop_w, :crop_h, group_ids: []
 
   form do |f|
     f.inputs do
       input :name
       input :image
+      input :cv
       input :text, as: :ckeditor, label: false
       input :groups, as: :select2_multiple, collection: options_for_select(Group.all.map{|b| [b.title,b.id]}, f.object.groups.pluck(:id))
     end
@@ -19,6 +20,9 @@ ActiveAdmin.register Scientist do
       end
       row :text do
         resource.text.try(:html_safe)
+      end
+      row :cv do
+        link_to resource.cv_file_name, resource.cv.url
       end
     end
   end
