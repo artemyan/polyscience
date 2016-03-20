@@ -3,9 +3,11 @@ class Scientist < ActiveRecord::Base
 
   attr_accessor :crop_x, :crop_y, :crop_w, :crop_h
 
+  has_many :properties, class_name: "ScientistProperty"
   has_many :group_scientists
   has_many :groups, through: :group_scientists
   accepts_nested_attributes_for :groups
+  accepts_nested_attributes_for :properties, :allow_destroy => true
 
   has_attached_file :cv
   do_not_validate_attachment_file_type :cv

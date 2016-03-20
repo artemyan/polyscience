@@ -1,5 +1,6 @@
 ActiveAdmin.register Scientist do
-  permit_params :name, :text, :cv, :image, :crop_x, :crop_y, :crop_w, :crop_h, group_ids: []
+  permit_params :name, :text, :cv, :image, :crop_x, :crop_y, :crop_w, :crop_h, group_ids: [],
+                properties_attributes: [:id, :property, :value, :_destroy]
 
   form do |f|
     f.inputs do
@@ -8,6 +9,10 @@ ActiveAdmin.register Scientist do
       input :cv
       input :text, as: :ckeditor, label: false
       input :groups, as: :select2_multiple, collection: options_for_select(Group.all.map{|b| [b.title,b.id]}, f.object.groups.pluck(:id))
+      f.has_many :properties, allow_destroy: true, new_record: true do |a|
+        a.input :property
+        a.input :value
+      end
     end
     actions
   end
@@ -23,6 +28,13 @@ ActiveAdmin.register Scientist do
       end
       row :cv do
         link_to resource.cv_file_name, resource.cv.url
+      end
+    end
+
+    panel "Properties" do
+      table_for resource.properties do
+        column :property
+        column :value
       end
     end
   end
