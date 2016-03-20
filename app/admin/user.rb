@@ -1,5 +1,5 @@
 ActiveAdmin.register User do
-  permit_params :email, :password, :password_confirmation
+  permit_params :email, :password, :password_confirmation, groups: [], scientists: []
 
   index do
     selectable_column
@@ -28,29 +28,12 @@ ActiveAdmin.register User do
   end
 
   controller do
-    def create
-      assign_roles
-      super
-    end
-
     def update
-      assign_roles
       if params[:user][:password].blank?
         params[:user].delete("password")
         params[:user].delete("password_confirmation")
       end
       super
-    end
-
-    def assign_roles
-      groups = params[:user][:groups].reject {|g| g.blank? }
-      if groups.present?
-        resource.add_rights(Group, groups)
-      end
-      scientists = params[:user][:scientists].reject {|g| g.blank? }
-      if scientists.present?
-        resource.add_rights(Scientist, scientists)
-      end
     end
   end
 end
