@@ -1,0 +1,8 @@
+.group-card
+  .group-card__avatar
+    = show_avatar group
+
+  .group-card__description
+    = link_to group.title, group_path(group), class: 'group-card__title'
+    .group-card__text
+      = truncate strip_tags(group.text), length: 100

@@ -1,0 +1,21 @@
+= show_breadcrumbs
+
+.group-page
+  .group-page__meta
+    .group-page__avatar
+      = show_avatar @resource
+
+    = link_to 'скачать CV', '#', class: '.group-page__download-cv'
+    .group-page__meta-content
+      .group-page__meta-title Сотрудники
+      - @resource.scientists.each do |scientist|
+        = link_to scientist_path(scientist), class: 'group-page__scientist-link' do
+          = wrap_to_spans scientist.name
+
+    .group-page__meta-title Видео
+
+  .group-page__base
+    h1.group-page__name = @resource.title
+    = link_to @resource.link, @resource.link, class: 'group-page__link'
+
+    .group-page__text = raw @resource.text
