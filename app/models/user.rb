@@ -31,4 +31,12 @@ class User < ActiveRecord::Base
       end
     end
   end
+
+  def groups
+    @groups || []
+  end
+
+  def scientists
+    @scientists || []
+  end
 end
