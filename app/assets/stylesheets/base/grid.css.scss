@@ -1,0 +1,13 @@
+$el: '.grid';
+
+#{$el} {
+  @include outer-container();
+}
+
+#{$el}__row {
+  @include row();
+}
+
+#{$el}__omega {
+  @include omega();
+}

@@ -76,6 +76,7 @@ GEM
     bourbon (4.2.6)
       sass (~> 3.4)
       thor (~> 0.19)
+    breadcrumbs_on_rails (2.3.1)
     builder (3.2.2)
     byebug (8.2.2)
     cancancan (1.13.1)
@@ -154,16 +155,22 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
+    meta-tags (2.1.0)
+      actionpack (>= 3.0.0)
     mime-types (2.99.1)
     mimemagic (0.3.0)
     mini_portile2 (2.0.0)
     minitest (5.8.4)
     multi_json (1.11.2)
+    neat (1.7.4)
+      bourbon (>= 4.0)
+      sass (>= 3.3)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-ssh (3.0.2)
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
+    normalize-rails (3.0.3)
     orm_adapter (0.5.0)
     paperclip (4.3.1)
       activemodel (>= 3.2.0)
@@ -225,6 +232,11 @@ GEM
       rdoc (~> 4.0)
     select2-rails (4.0.1.1)
       thor (~> 0.14)
+    simple-navigation (4.0.3)
+      activesupport (>= 2.3.2)
+    slim (3.0.6)
+      temple (~> 0.7.3)
+      tilt (>= 1.3.3, < 2.1)
     spring (1.6.4)
     sprockets (3.5.2)
       concurrent-ruby (~> 1.0)
@@ -236,6 +248,7 @@ GEM
     sshkit (1.9.0)
       net-scp (>= 1.1.2)
       net-ssh (>= 2.8.0)
+    temple (0.7.6)
     thin (1.6.4)
       daemons (~> 1.0, >= 1.0.9)
       eventmachine (~> 1.0, >= 1.0.4)
@@ -264,6 +277,8 @@ PLATFORMS
 DEPENDENCIES
   activeadmin
   activeadmin-select2!
+  bourbon
+  breadcrumbs_on_rails
   byebug
   cancancan
   capistrano (~> 3.3.0)
@@ -277,6 +292,9 @@ DEPENDENCIES
   faker
   jbuilder (~> 2.0)
   jquery-rails
+  meta-tags
+  neat
+  normalize-rails
   paperclip
   pg
   rails (= 4.2.6)
@@ -284,11 +302,10 @@ DEPENDENCIES
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   select2-rails
+  simple-navigation
+  slim
   spring
   thin
   turbolinks
   uglifier (>= 1.3.0)
   web-console (~> 2.0)
-
-BUNDLED WITH
-   1.10.6

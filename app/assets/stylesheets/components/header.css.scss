@@ -1,0 +1,17 @@
+$el: '.header';
+
+#{$el} {
+  @include background(linear-gradient($color-brand-green, darken($color-brand-green, 10%)) top repeat);
+
+  #{$el}__container {
+    @include outer-container();
+  }
+
+  #{$el}__logo {
+    @include span-columns(2);
+  }
+
+  #{$el}__menu {
+    @include span-columns(8);
+  }
+}

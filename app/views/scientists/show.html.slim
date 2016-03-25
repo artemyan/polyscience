@@ -1,0 +1,23 @@
+= show_breadcrumbs
+
+.scientist-page
+  .scientist-page__meta
+    .scientist-page__avatar
+      = show_avatar @resource
+
+    - if @resource.cv.exists?
+      = link_to 'скачать CV', @resource.cv.url, class: '.scientist-page__download-cv'
+
+    .scientist-page__properties
+      - @resource.properties.each do |prop|
+        .scientist-page__property
+          .scientist-page__property-value = prop.value
+          .scientist-page__property-name = prop.property
+
+  .scientist-page__base
+    h1.scientist-page__name = @resource.name
+    .scientist-page__groups
+      - @resource.groups.each do |group|
+        = link_to group.title, group_path(group), class: 'scientist-page__group'
+
+    .scientist-page__text = raw @resource.text

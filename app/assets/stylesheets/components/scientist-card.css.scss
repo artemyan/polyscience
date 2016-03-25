@@ -1,0 +1,28 @@
+$el: '.scientist-card';
+
+#{$el} {
+  @include row();
+}
+
+#{$el}__avatar {
+  @include span-columns(2);
+
+  > img {
+    $size: 90%;
+    max-width: $size;
+    max-height: $size;
+    width: auto;
+    height: auto;
+
+    border-radius: 100%;
+  }
+}
+
+#{$el}__description {
+  @include span-columns(10);
+}
+
+#{$el}__name {
+  font-size: $font-size-title;
+  @include borderable-link($color-blue, $color-red);
+}

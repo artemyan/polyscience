@@ -1,0 +1,5 @@
+.header
+  .header__container
+    = link_to root_path, class: 'header__logo'
+      = image_tag 'logo.png'
+    .header__menu = render_navigation renderer: :main_menu

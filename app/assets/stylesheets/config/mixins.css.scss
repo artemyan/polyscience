@@ -1,0 +1,60 @@
+@mixin borderable-link($color, $active-color: $color) {
+  &, &:hover, &:active, &:visited {
+    display: inline-block;
+    text-decoration: none;
+    border-bottom: 1px solid;
+  }
+
+  &, &:visited {
+    color: $color;
+    border-color: $color;
+  }
+
+  &:hover, &:active {
+    color: $active-color;
+    border-color: $active-color;
+  }
+}
+
+@mixin borderable-span-link($color, $active-color: $color) {
+  &, &:hover, &:active, &:visited {
+    text-decoration: none;
+  }
+
+  > span {
+    display: inline-block;
+    border-bottom: 1px solid;
+    padding-right: .4em;
+    &:last-child {
+      padding-right: 0;
+    }
+  }
+
+  &, &:visited {
+    > span {
+      color: $color;
+      border-color: $color;
+    }
+  }
+
+  &:hover, &:active {
+    > span {
+      color: $active-color;
+      border-color: $active-color;
+    }
+  }
+}
+
+@mixin imagable-link {
+  &, &:hover, &:active, &:visited {
+    @include hide-text;
+  }
+}
+
+@mixin round-avatar($size: 100%) {
+  max-width: $size;
+  max-height: $size;
+  width: auto;
+  height: auto;
+  border-radius: 100%;
+}

@@ -1,0 +1,10 @@
+ru:
+  meta_tags:
+    defaults:
+      title: (dev) Polyscience
+      description: Проект Polyscience
+    pages:
+      scientists:
+        title: (dev) Все ученые
+      groups:
+        title: (dev) Все группы

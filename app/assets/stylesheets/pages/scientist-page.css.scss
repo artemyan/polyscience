@@ -1,0 +1,42 @@
+$el: '.scientist-page';
+
+#{$el} {
+  @include row();
+}
+
+#{$el}__meta {
+  @include span-columns(3);
+}
+
+#{$el}__base {
+  @include span-columns(9);
+}
+
+#{$el}__avatar {
+  > img {
+    $size: 100%;
+    max-width: $size;
+    max-height: $size;
+    width: auto;
+    height: auto;
+    border-radius: 100%;
+  }
+}
+
+#{$el}__name {
+  @extend %resource-page-title;
+}
+
+#{$el}__property {
+  @include row();
+}
+
+#{$el}__property-value {
+  @include span-columns(6);
+  text-align: right;
+  color: $color-brand-green;
+}
+
+#{$el}__property-name {
+  @include span-columns(6);
+}

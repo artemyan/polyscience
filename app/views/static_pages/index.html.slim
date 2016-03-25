@@ -1,0 +1,19 @@
+.home-page__links.grid__row
+  = link_to scientists_path, class: 'home-page__link' do
+    span Ученые
+    span = " (#{@scientists_count})"
+  span.home-page__space и
+  = link_to groups_path, class: 'home-page__link' do
+    span научные группы
+    span = " (#{@groups_count})"
+  span.home-page__space политеха
+
+.grid__row.home-page__banners
+  .home-page__banner.m-half
+    = image_tag 'http://fakeimg.pl/1000x300/?text=1&font=lobster'
+
+  .home-page__banner.m-half
+    = image_tag 'http://fakeimg.pl/1000x300/?text=2&font=lobster'
+
+  .home-page__banner.m-full
+    = image_tag 'http://fakeimg.pl/1000x300/?text=3&font=lobster'

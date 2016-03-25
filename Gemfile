@@ -33,3 +33,11 @@ group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
 end
+
+gem 'slim'
+gem 'meta-tags'
+gem 'simple-navigation'
+gem 'normalize-rails'
+gem 'bourbon'
+gem 'neat'
+gem 'breadcrumbs_on_rails'

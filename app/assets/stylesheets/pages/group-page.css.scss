@@ -1,0 +1,47 @@
+$el: '.group-page';
+
+#{$el} {
+  @include row();
+}
+
+#{$el}__meta {
+  @include span-columns(3);
+}
+
+#{$el}__meta-title {
+  font-size: $font-size-subtitle;
+  color: $color-brand-green;
+}
+
+#{$el}__scientist-link {
+  @include borderable-span-link($color-blue, $color-red);
+}
+
+#{$el}__base {
+  @include span-columns(9);
+}
+
+#{$el}__avatar {
+  > img {
+    @include round-avatar(100%);
+  }
+}
+
+#{$el}__name {
+  font-size: $font-size-header;
+  color: $color-brand-blue;
+}
+
+#{$el}__property {
+  @include row();
+}
+
+#{$el}__property-value {
+  @include span-columns(6);
+  text-align: right;
+  color: $color-brand-green;
+}
+
+#{$el}__property-name {
+  @include span-columns(6);
+}

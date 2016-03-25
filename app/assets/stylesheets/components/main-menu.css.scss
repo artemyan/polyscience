@@ -1,0 +1,29 @@
+$el: '.main-menu';
+
+#{$el} {
+  text-align: center;
+
+  #{$el}__item {
+    $color: $color-white;
+    $color-active: $color-brand-green;
+    margin: 1em;
+
+    &, &:hover, &:active, &:visited {
+      display: inline-block;
+      text-decoration: none;
+      border-bottom: 1px solid;
+    }
+
+    &, &:visited {
+      color: $color;
+      border-color: $color;
+    }
+
+    &:hover, &:active, &.m-active {
+      color: $color-active;
+      border-color: transparent;
+      background: $color;
+    }
+  }
+
+}
