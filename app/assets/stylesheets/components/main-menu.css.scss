@@ -1,28 +1,27 @@
 $el: '.main-menu';
 
 #{$el} {
-  text-align: center;
 
   #{$el}__item {
     $color: $color-white;
     $color-active: $color-brand-green;
-    margin: 1em;
 
-    &, &:hover, &:active, &:visited {
-      display: inline-block;
-      text-decoration: none;
-      border-bottom: 1px solid;
+    @include borderable-span-link($color-white, lighten($color-brand-green-light, 45%));
+    margin-right: .5em;
+    padding: .3em .7em;
+
+    &:last-child {
+      margin-right: 0;
     }
 
-    &, &:visited {
-      color: $color;
-      border-color: $color;
-    }
+    &.m-active {
+      background: white;
+      border-radius: .2em;
 
-    &:hover, &:active, &.m-active {
-      color: $color-active;
-      border-color: transparent;
-      background: $color;
+      > span { color: $color-brand-green; }
+      &:hover, &:active {
+        > span { border-color: transparent; }
+      }
     }
   }
 

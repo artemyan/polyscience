@@ -9,6 +9,10 @@ class MainMenu < SimpleNavigation::Renderer::Base
 
   private
 
+  def tag_for(item)
+    link_to "<span>#{item.name}</span".html_safe, item.url, options_for(item)
+  end
+
   def join_with
     @join_with ||= options[:join_with] || ''
   end

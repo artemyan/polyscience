@@ -14,8 +14,7 @@ class ApplicationController < ActionController::Base
   def set_default_meta_tags
     set_meta_tags title: t('meta_tags.defaults.title'),
                   description: t('meta_tags.defaults.description'),
-                  charset: 'utf8',
-                  icon: '/favicon.png'
+                  charset: 'utf8'
   end
 
   def set_admin_locale

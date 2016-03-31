@@ -1,17 +1,27 @@
 $el: '.header';
-
+$height: 100px;
+$logo-height: 42px;
 #{$el} {
-  @include background(linear-gradient($color-brand-green, darken($color-brand-green, 10%)) top repeat);
+  @include background(linear-gradient(9deg, $color-brand-green, $color-brand-green-light) top repeat);
+  height: $height;
 
   #{$el}__container {
     @include outer-container();
   }
 
   #{$el}__logo {
-    @include span-columns(2);
+    @include span-columns(3);
+    margin-top: ($height - $logo-height)/2 - 1px;
+    > img {
+      height: 42px;
+      width: auto;
+    }
   }
 
   #{$el}__menu {
     @include span-columns(8);
+    $font-size: $font-size-base;
+    font-size: $font-size;
+    margin-top: ($height/2 - $font-size) + 5px;
   }
 }

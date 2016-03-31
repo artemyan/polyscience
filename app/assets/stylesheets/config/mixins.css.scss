@@ -58,3 +58,10 @@
   height: auto;
   border-radius: 100%;
 }
+
+@mixin autosizable-image($size: 100%) {
+  max-width: $size;
+  max-height: $size;
+  width: auto;
+  height: auto;
+}
