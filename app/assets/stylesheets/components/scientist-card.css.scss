@@ -2,19 +2,20 @@ $el: '.scientist-card';
 
 #{$el} {
   @include row();
+
+  &.m-indented {
+    margin-top: 50px;
+    &:first-child {
+      margin-top: 0;
+    }
+  }
 }
 
 #{$el}__avatar {
   @include span-columns(2);
 
   > img {
-    $size: 90%;
-    max-width: $size;
-    max-height: $size;
-    width: auto;
-    height: auto;
-
-    border-radius: 100%;
+    @include round-avatar(90%);
   }
 }
 
@@ -25,4 +26,10 @@ $el: '.scientist-card';
 #{$el}__name {
   font-size: $font-size-title;
   @include borderable-link($color-blue, $color-red);
+}
+
+#{$el}__text {
+  color: $color-gray;
+  margin-top: .3em;
+  line-height: 1.5;
 }

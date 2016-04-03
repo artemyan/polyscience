@@ -19,23 +19,7 @@ $el: '.home-page';
   }
   
   #{$el}__link-meta {
-    $color: $color-gray-light;
-    $triangle-size: .5em;
-    position: absolute;
-    right: -1.5em;
-    top: -2em;
-    font-size: $font-size-small;
-    padding: .3em .5em;
-    background: $color;
-    color: white;
-
-    &:before {
-      content: '';
-      position: absolute;
-      bottom: -$triangle-size;
-      left: 0;
-      @include triangle($triangle-size, $color transparent, up-left);
-    }
+    @include arrowable-label($color-gray-light);
   }
 }
 

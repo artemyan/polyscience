@@ -65,3 +65,22 @@
   width: auto;
   height: auto;
 }
+
+@mixin arrowable-label($bg, $color: white) {
+  $triangle-size: .5em;
+  position: absolute;
+  right: -1.5em;
+  top: -2em;
+  font-size: $font-size-small;
+  padding: .3em .5em;
+  background: $bg;
+  color: $color;
+
+  &:before {
+    content: '';
+    position: absolute;
+    bottom: -$triangle-size;
+    left: 0;
+    @include triangle($triangle-size, $bg transparent, up-left);
+  }
+}

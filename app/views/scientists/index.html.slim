@@ -1,3 +1,5 @@
-h1.page-title = "Ученые (#{@collection.count})"
 = show_breadcrumbs
-= render @collection
+h1.page-title.m-plain
+  | Все ученые политеха
+  .page-title__label = @collection.count
+.scientists-page = render @collection

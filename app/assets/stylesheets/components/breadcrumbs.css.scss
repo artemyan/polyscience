@@ -1,0 +1,12 @@
+$el: '.breadcrumbs';
+
+#{$el} {
+  $color: $color-gray;
+  margin-top: 46px;
+  color: $color;
+
+  > a {
+    @include borderable-link($color, darken($color, 10%));
+  }
+
+}

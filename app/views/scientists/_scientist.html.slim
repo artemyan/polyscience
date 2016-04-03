@@ -1,8 +1,8 @@
-.scientist-card
+.scientist-card.m-indented
   .scientist-card__avatar
     = show_avatar scientist
 
   .scientist-card__description
     = link_to scientist.name, scientist_path(scientist), class: 'scientist-card__name'
     .scientist-card__text
-      = truncate strip_tags(scientist.text), length: 100
+      = truncate strip_tags(scientist.text), length: 300

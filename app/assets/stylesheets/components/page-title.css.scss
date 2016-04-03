@@ -1,0 +1,18 @@
+$el: '.page-title';
+
+#{$el} {
+  position: relative;
+  display: inline-block;
+
+  &.m-plain {
+    font-size: $font-size-header;
+    color: $color-gray;
+    font-weight: $font-normal;
+    letter-spacing: -1px;
+    margin-top: .5em;
+  }
+}
+
+#{$el}__label {
+  @include arrowable-label($color-brand-green-light);
+}
