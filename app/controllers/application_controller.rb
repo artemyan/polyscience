@@ -3,7 +3,8 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
-  before_action :set_default_meta_tags
+  before_action :set_default_meta_tags,
+                :set_public_locale
 
   def access_denied(exception)
     redirect_to '/'
@@ -19,5 +20,9 @@ class ApplicationController < ActionController::Base
 
   def set_admin_locale
     I18n.locale = :en
+  end
+
+  def set_public_locale
+    I18n.locale = :ru
   end
 end

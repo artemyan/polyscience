@@ -6,10 +6,16 @@ $el: '.scientist-page';
 
 #{$el}__meta {
   @include span-columns(3);
+  text-align: center;
 }
 
-#{$el}__base {
+#{$el}__content {
   @include span-columns(9);
+}
+
+#{$el}__header {
+  @include span-columns(9);
+  @include shift(3);
 }
 
 #{$el}__avatar {
@@ -27,16 +33,86 @@ $el: '.scientist-page';
   @extend %resource-page-title;
 }
 
+#{$el}__properties {
+  text-align: left;
+  margin-top: 50px;
+}
+
 #{$el}__property {
   @include row();
+  margin-top: 20px;
 }
 
 #{$el}__property-value {
-  @include span-columns(6);
+  @include span-columns(5);
+  color: $color-brand-green-light;
+  font-weight: $font-extrabold;
+  font-size: $font-size-subheader;
   text-align: right;
-  color: $color-brand-green;
+  line-height: 0.9;
+  letter-spacing: -2px;
 }
 
 #{$el}__property-name {
-  @include span-columns(6);
+  @include span-columns(7);
+  font-size: $font-size-small;
+  color: $color-gray;
+  line-height: 1.2;
+  padding-left: .5em;
+}
+
+#{$el}__group-link {
+  $icon-size: 1.5em;
+  $font-size: $font-size-base;
+  @include borderable-link($color-blue, darken($color-blue, 10%));
+  margin-left: $icon-size;
+
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 18px;
+    height: $font-size;
+    margin-left: -$icon-size;
+    background-image: url(image-path('icons/users.png'));
+    background-repeat: no-repeat;
+    background-position: left bottom;
+  }
+}
+
+#{$el}__download-cv {
+  $font-size: $font-size-base;
+  margin-top: 10px;
+  text-align: center;
+  display: block;
+
+  @include borderable-span-link($color-blue, darken($color-blue, 10%));
+
+  &:before {
+    content: '';
+    display: inline-block;
+    width: 23px;
+    height: 31px;
+    background: url(image-path('icons/pdf.png')) no-repeat left bottom;
+    vertical-align: middle;
+  }
+
+  span {
+    margin-left: .7em;
+  }
+}
+
+#{$el}__text {
+  font-family: $font-family-sans-serif !important;
+  font-size: $font-size-base !important;
+  color: $color-gray;
+  font-weight: $font-semibold;
+  margin-top: 2em;
+
+  p {
+    margin: 0;
+    padding: 1em 0 0;
+    line-height: 1.7;
+    &:first-child, &:empty { padding-top: 0; }
+  }
 }

@@ -3,11 +3,21 @@ $el: '.page-title';
 #{$el} {
   position: relative;
   display: inline-block;
+  margin: 0;
+  padding: 0;
 
   &.m-plain {
     font-size: $font-size-header;
     color: $color-gray;
     font-weight: $font-normal;
+    letter-spacing: -1px;
+    margin-top: .5em;
+  }
+
+  &.m-instance {
+    font-size: $font-size-header;
+    color: $color-brand-blue;
+    font-weight: $font-light;
     letter-spacing: -1px;
     margin-top: .5em;
   }
