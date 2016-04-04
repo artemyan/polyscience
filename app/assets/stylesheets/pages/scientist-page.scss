@@ -103,16 +103,5 @@ $el: '.scientist-page';
 }
 
 #{$el}__text {
-  font-family: $font-family-sans-serif !important;
-  font-size: $font-size-base !important;
-  color: $color-gray;
-  font-weight: $font-semibold;
   margin-top: 2em;
-
-  p {
-    margin: 0;
-    padding: 1em 0 0;
-    line-height: 1.7;
-    &:first-child, &:empty { padding-top: 0; }
-  }
 }

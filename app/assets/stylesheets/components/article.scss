@@ -1,0 +1,37 @@
+$el: '.article';
+
+#{$el} h3,
+#{$el}__title {
+  font-family: $font-family-sans-serif;
+  font-weight: $font-bold;
+  font-size: 13px;
+  text-transform: uppercase;
+  padding: 0;
+  margin: 0;
+  color: $color-brand-orange;
+
+  & + p,
+  & + #{$el}__text {
+    padding-top: .1em;
+  }
+}
+
+#{$el} p,
+#{$el}__text {
+  font-family: $font-family-sans-serif;
+  font-size: $font-size-base;
+  color: $color-gray;
+  font-weight: $font-normal;
+  margin: 0;
+  padding: 1em 0 0;
+  line-height: 1.7;
+  &:first-child, &:empty {
+      padding-top: 0;
+  }
+
+  & + h3,
+  & + #{$el}__title {
+    margin-top: 48px;
+  }
+}
+
