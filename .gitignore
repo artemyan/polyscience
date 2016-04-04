@@ -20,6 +20,7 @@
 .byebug_history
 .DS_Store
 public/system/*
+public/ckeditor_assets/*
 
 .rvmrc
 .idea
