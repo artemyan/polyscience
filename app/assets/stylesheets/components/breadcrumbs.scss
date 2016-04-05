@@ -9,4 +9,8 @@ $el: '.breadcrumbs';
     @include borderable-link($color, darken($color, 10%));
   }
 
+  a + a {
+    text-transform: lowercase;
+  }
+
 }

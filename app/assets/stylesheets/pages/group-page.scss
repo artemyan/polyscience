@@ -4,21 +4,62 @@ $el: '.group-page';
   @include row();
 }
 
+#{$el}__header {
+  @include span-columns(9);
+  @include shift(3);
+}
+
+#{$el}__links {
+  margin-top: 30px;
+}
+
+#{$el}__link {
+  $icon-size: 1.5em;
+  $font-size: $font-size-base;
+  @include borderable-link($color-blue, darken($color-blue, 10%));
+  @include iconable-prefix('icons/earth.png', $font-size, $icon-size);
+}
+
 #{$el}__meta {
   @include span-columns(3);
 }
 
+#{$el}__content {
+  @include span-columns(9);
+}
+
+#{$el}__text {
+  margin-top: 40px;
+}
+
 #{$el}__meta-title {
-  font-size: $font-size-subtitle;
+  font-size: 13px;
+  font-weight: $font-bold;
+  text-transform: uppercase;
   color: $color-brand-green;
+
+  margin-top: 35px;
+}
+
+#{$el}__download-cv + #{$el}__meta-title {
+  margin-top: 60px;
 }
 
 #{$el}__scientist-link {
   @include borderable-span-link($color-blue, $color-red);
+  @include iconable-prefix('icons/user.png', $font-size-base, 1.5em);
+
+  display: block;
+  margin-top: 16px;
 }
 
-#{$el}__base {
-  @include span-columns(9);
+#{$el}__meta-video {
+  margin-top: 25px;
+}
+
+#{$el}__meta-image {
+  margin-top: 25px;
+  @include autosizable-image();
 }
 
 #{$el}__avatar {
@@ -27,21 +68,16 @@ $el: '.group-page';
   }
 }
 
-#{$el}__name {
-  font-size: $font-size-header;
-  color: $color-brand-blue;
-}
+#{$el}__download-cv {
+  $font-size: $font-size-base;
+  margin-top: 10px;
+  text-align: center;
+  display: block;
 
-#{$el}__property {
-  @include row();
-}
+  @include borderable-span-link($color-blue, darken($color-blue, 10%));
+  @include pdfable-prefix();
 
-#{$el}__property-value {
-  @include span-columns(6);
-  text-align: right;
-  color: $color-brand-green;
-}
-
-#{$el}__property-name {
-  @include span-columns(6);
+  span {
+    margin-left: .7em;
+  }
 }

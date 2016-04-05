@@ -84,3 +84,30 @@
     @include triangle($triangle-size, $bg transparent, up-left);
   }
 }
+
+@mixin iconable-prefix($icon-name, $height, $margin) {
+  margin-left: $margin;
+  position: relative;
+  &:before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 18px;
+    height: $height;
+    margin-left: -$margin;
+    background-image: url(image-path($icon-name));
+    background-repeat: no-repeat;
+    background-position: left bottom;
+  }
+}
+
+@mixin pdfable-prefix() {
+  &:before {
+    content: '';
+    display: inline-block;
+    width: 23px;
+    height: 31px;
+    background: url(image-path('icons/pdf.png')) no-repeat left bottom;
+    vertical-align: middle;
+  }
+}

@@ -10,7 +10,7 @@ module ApplicationHelper
     if resource.respond_to?(:image) && resource.image.exists?
       image_tag resource.image.url(:medium)
     else
-      image_tag 'missings/missing.png'
+      image_tag 'missings/missing.jpg'
     end
   end
 
@@ -18,6 +18,11 @@ module ApplicationHelper
     str.split(' ').map do |substr|
       content_tag :span, substr
     end.join('').html_safe
+  end
+
+  def video_embed(url, width="100%")
+    video = VideoInfo.new(url)
+    video.embed_code(iframe_attributes: { width: width }).html_safe
   end
 
 end

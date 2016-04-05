@@ -12,7 +12,6 @@
       = show_avatar @resource
 
     - if @resource.cv.exists?
-      span.scientist-page__download-cv-icon.icon__pdf
       = link_to @resource.cv.url, class: 'scientist-page__download-cv' do
         span скачать CV
 

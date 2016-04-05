@@ -62,22 +62,10 @@ $el: '.scientist-page';
 }
 
 #{$el}__group-link {
-  $icon-size: 1.5em;
+  $margin: 1.5em;
   $font-size: $font-size-base;
   @include borderable-link($color-blue, darken($color-blue, 10%));
-  margin-left: $icon-size;
-
-  &:before {
-    content: '';
-    display: block;
-    position: absolute;
-    width: 18px;
-    height: $font-size;
-    margin-left: -$icon-size;
-    background-image: url(image-path('icons/users.png'));
-    background-repeat: no-repeat;
-    background-position: left bottom;
-  }
+  @include iconable-prefix('icons/users.png', $font-size, $margin);
 }
 
 #{$el}__download-cv {
@@ -87,15 +75,7 @@ $el: '.scientist-page';
   display: block;
 
   @include borderable-span-link($color-blue, darken($color-blue, 10%));
-
-  &:before {
-    content: '';
-    display: inline-block;
-    width: 23px;
-    height: 31px;
-    background: url(image-path('icons/pdf.png')) no-repeat left bottom;
-    vertical-align: middle;
-  }
+  @include pdfable-prefix();
 
   span {
     margin-left: .7em;
