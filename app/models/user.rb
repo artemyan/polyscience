@@ -9,8 +9,6 @@ class User < ActiveRecord::Base
   devise :database_authenticatable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  after_save :update_roles
-
   def update_roles
     ACCESSABLE_MODELS.each do |model|
       self.remove_role "moderator", model

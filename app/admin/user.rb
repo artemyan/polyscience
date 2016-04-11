@@ -28,12 +28,18 @@ ActiveAdmin.register User do
   end
 
   controller do
+    def create
+      super
+      resource.update_roles
+    end
+
     def update
       if params[:user][:password].blank?
         params[:user].delete("password")
         params[:user].delete("password_confirmation")
       end
       super
+      resource.update_roles
     end
   end
 end
