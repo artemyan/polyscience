@@ -3,6 +3,13 @@ ActiveAdmin.register Group do
                 group_videos_attributes: [:id, :source, :_destroy],
                 group_images_attributes: [:id, :image, :_destroy]
 
+  index do
+    id_column
+    column :title
+    column :updated_at
+    actions
+  end
+
   form do |f|
     f.inputs do
       input :title

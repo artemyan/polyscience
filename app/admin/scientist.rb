@@ -2,6 +2,13 @@ ActiveAdmin.register Scientist do
   permit_params :name, :text, :cv, :image, :crop_x, :crop_y, :crop_w, :crop_h, group_ids: [],
                 properties_attributes: [:id, :property, :value, :_destroy]
 
+  index do
+    id_column
+    column :name
+    column :updated_at
+    actions
+  end
+
   form do |f|
     f.inputs do
       input :name
