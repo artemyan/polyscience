@@ -1,5 +1,6 @@
 ActiveAdmin.register Scientist do
-  permit_params :name, :text, :cv, :image, :crop_x, :crop_y, :crop_w, :crop_h, group_ids: [],
+  permit_params :name, :text, :cv, :image, :crop_x, :crop_y, :crop_w, :crop_h, 
+                group_ids: [], branch_ids: [],
                 properties_attributes: [:id, :property, :value, :_destroy]
 
   index do
@@ -20,6 +21,7 @@ ActiveAdmin.register Scientist do
         a.input :property
         a.input :value
       end
+      input :branches, as: :select2_multiple
     end
     actions
   end
@@ -37,11 +39,15 @@ ActiveAdmin.register Scientist do
         link_to resource.cv_file_name, resource.cv.url
       end
     end
-
     panel "Properties" do
       table_for resource.properties do
         column :property
         column :value
+      end
+    end
+    panel "Branches" do
+      table_for resource.branches do
+        column :title
       end
     end
   end

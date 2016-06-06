@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160522162044) do
+ActiveRecord::Schema.define(version: 20160606111027) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,29 @@ ActiveRecord::Schema.define(version: 20160522162044) do
   add_index "active_admin_comments", ["author_type", "author_id"], name: "index_active_admin_comments_on_author_type_and_author_id", using: :btree
   add_index "active_admin_comments", ["namespace"], name: "index_active_admin_comments_on_namespace", using: :btree
   add_index "active_admin_comments", ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id", using: :btree
+
+  create_table "branches", force: :cascade do |t|
+    t.string   "title"
+    t.integer  "parent_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "branches_groups", id: false, force: :cascade do |t|
+    t.integer "branch_id"
+    t.integer "group_id"
+  end
+
+  add_index "branches_groups", ["branch_id"], name: "index_branches_groups_on_branch_id", using: :btree
+  add_index "branches_groups", ["group_id"], name: "index_branches_groups_on_group_id", using: :btree
+
+  create_table "branches_scientists", id: false, force: :cascade do |t|
+    t.integer "branch_id"
+    t.integer "scientist_id"
+  end
+
+  add_index "branches_scientists", ["branch_id"], name: "index_branches_scientists_on_branch_id", using: :btree
+  add_index "branches_scientists", ["scientist_id"], name: "index_branches_scientists_on_scientist_id", using: :btree
 
   create_table "ckeditor_assets", force: :cascade do |t|
     t.string   "data_file_name",               null: false

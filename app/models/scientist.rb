@@ -6,6 +6,7 @@ class Scientist < ActiveRecord::Base
   has_many :properties, class_name: "ScientistProperty"
   has_many :group_scientists
   has_many :groups, through: :group_scientists
+  has_and_belongs_to_many :branches
   accepts_nested_attributes_for :groups
   accepts_nested_attributes_for :properties, :allow_destroy => true
 

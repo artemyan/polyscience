@@ -1,5 +1,6 @@
 ActiveAdmin.register Group do
   permit_params :title, :text, :link, :pdf, scientist_ids: [],
+                branch_ids: [],
                 group_videos_attributes: [:id, :source, :_destroy],
                 group_images_attributes: [:id, :image, :_destroy]
 
@@ -23,6 +24,7 @@ ActiveAdmin.register Group do
       f.has_many :group_images, allow_destroy: true, new_record: true do |a|
         a.input :image
       end
+      input :branches, as: :select2_multiple
     end
     actions
   end
@@ -52,6 +54,11 @@ ActiveAdmin.register Group do
         column :image do |image|
           image_tag(image.image.url(:medium))
         end
+      end
+    end
+    panel "Branches" do
+      table_for resource.branches do
+        column :title
       end
     end
   end
