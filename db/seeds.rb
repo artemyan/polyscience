@@ -43,3 +43,11 @@ admin.add_role "admin"
   end
 end
 puts "Users created"
+
+Connection.destroy_all
+10.times do 
+	Connection.create(title: Faker::Lorem.word, 
+										branch_id: Branch.all.sample.id, 
+										description: Faker::Lorem.paragraph(3))
+end
+puts "Connections created"
