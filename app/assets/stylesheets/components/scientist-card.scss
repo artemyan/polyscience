@@ -15,7 +15,7 @@ $el: '.scientist-card';
   @include span-columns(2);
 
   > img {
-    @include round-avatar(90%);
+    @include round-avatar(100px);
   }
 }
 
@@ -24,7 +24,7 @@ $el: '.scientist-card';
 }
 
 #{$el}__name {
-  font-size: $font-size-title;
+  font-size: $font-size-subtitle;
   @include borderable-link($color-blue, $color-red);
 }
 

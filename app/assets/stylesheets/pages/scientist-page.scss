@@ -20,7 +20,7 @@ $el: '.scientist-page';
 
 #{$el}__avatar {
   > img {
-    $size: 100%;
+    $size: 200px;
     max-width: $size;
     max-height: $size;
     width: auto;

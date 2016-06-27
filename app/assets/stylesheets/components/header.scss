@@ -13,8 +13,8 @@ $logo-height: 42px;
     @include span-columns(3);
     margin-top: ($height - $logo-height)/2 - 1px;
     > img {
-      height: 42px;
-      width: auto;
+      height: auto;
+      width: 151px;
     }
   }
 
