@@ -1,3 +1,5 @@
-h1.page-title = "Научные группы (#{@collection.count})"
 = show_breadcrumbs
-= render @collection
+h1.page-title.m-plain
+  | Научные группы
+  .page-title__label = @collection.count
+.groups-page = render @collection

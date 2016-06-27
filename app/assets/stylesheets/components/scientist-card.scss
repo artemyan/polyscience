@@ -25,6 +25,7 @@ $el: '.scientist-card';
 
 #{$el}__name {
   font-size: $font-size-subtitle;
+  line-height: 1.5;
   @include borderable-link($color-blue, $color-red);
 }
 
