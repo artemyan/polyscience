@@ -13,7 +13,7 @@
 
     - if @resource.cv.exists?
       = link_to @resource.cv.url, class: 'scientist-page__download-cv' do
-        span скачать CV
+        span download CV
 
     .scientist-page__properties
       - @resource.properties.each do |prop|

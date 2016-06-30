@@ -56,9 +56,9 @@ SimpleNavigation::Configuration.run do |navigation|
     #                            when the item should be highlighted, you can set a regexp which is matched
     #                            against the current URI.  You may also use a proc, or the symbol <tt>:subpath</tt>.
     #
-    primary.item :scope, I18n.t('main_menu.scope'), '#'
+    #primary.item :scope, I18n.t('main_menu.scope'), '#'
     primary.item :scientific_groups, I18n.t('main_menu.scientific_groups'), groups_path, highlights_on: /groups/
-    primary.item :rnd, I18n.t('main_menu.rnd'), '#'
+    #primary.item :rnd, I18n.t('main_menu.rnd'), '#'
     primary.item :scientists, I18n.t('main_menu.scientists'), scientists_path, highlights_on: /scientists/
 
     # Add an item which has a sub navigation (same params, but with block)

@@ -15,18 +15,18 @@
       = link_to @resource.pdf.url, class: 'group-page__download-cv' do
         span Скачать info
 
-    .group-page__meta-title Сотрудники
+    .group-page__meta-title STAFF
     .group-page__meta-info
       - @resource.scientists.each do |scientist|
         = link_to scientist_path(scientist), class: 'group-page__scientist-link' do
           = wrap_to_spans scientist.name
 
-    .group-page__meta-title Видео
+    .group-page__meta-title VIDEO
     .group-page__meta-info
       - @resource.group_videos.each do |attach|
         .group-page__meta-video = video_embed attach.source
 
-    .group-page__meta-title Изображения
+    .group-page__meta-title PICS
     .group-page__meta-info
       - @resource.group_images.each do |attach|
         = image_tag attach.image.url(:medium), class: 'group-page__meta-image'

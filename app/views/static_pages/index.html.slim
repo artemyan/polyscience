@@ -1,27 +1,27 @@
 .home-page__links.grid__row
   = link_to scientists_path, class: 'home-page__link' do
-    span Ученые
+    span Researchers
     .home-page__link-meta = @scientists_count
-  span.home-page__space и
+  span.home-page__space and
   = link_to groups_path, class: 'home-page__link' do
-    span научные группы
+    span research groups
     .home-page__link-meta = @groups_count
-  span.home-page__space политеха
+  span.home-page__space are ready for collaboration
 
 .grid__row.home-page__banners
   .home-page__banner.m-half
     = image_tag 'home-page/banner_1.jpg'
     .home-page__banner-text
-      = link_to '#', class: 'home-page__banner-link' do
-        = wrap_to_spans 'Разработки и проекты, меняющие индустрию'
-      .home-page__banner-link-meta 11
+      = link_to groups_path, class: 'home-page__banner-link' do
+        = wrap_to_spans 'Check out Polytech scientific groups'
+      /.home-page__banner-link-meta 11
 
   .home-page__banner.m-half
     = image_tag 'home-page/banner_2.jpg'
     .home-page__banner-text
-      = link_to '#', class: 'home-page__banner-link' do
-        = wrap_to_spans 'Лаборатории и центры'
-      .home-page__banner-link-meta 5
+      = link_to scientists_path, class: 'home-page__banner-link' do
+        = wrap_to_spans 'Meet polytechnicians'
+      /.home-page__banner-link-meta 5
 
   .home-page__banner.m-full
     = image_tag 'home-page/banner_3.jpg'

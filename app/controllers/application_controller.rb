@@ -24,6 +24,6 @@ class ApplicationController < ActionController::Base
   end
 
   def set_public_locale
-    I18n.locale = :ru
+    I18n.locale = :en
   end
 end

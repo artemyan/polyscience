@@ -1,0 +1,10 @@
+en:
+  meta_tags:
+    defaults:
+      title: Polyscience
+      description: Polyscience
+    pages:
+      scientists:
+        title: Researchers
+      groups:
+        title: Research groups
